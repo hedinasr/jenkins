@@ -28,23 +28,6 @@ jenkins:
   views:
   - all:
       name: "all"
-tool:
-  git:
-    installations:
-    - home: "git"
-      name: "Default"
-  jdk:
-    installations:
-    - home: "/docker-java-home"
-      name: "jdk"
-  maven:
-    installations:
-    - name: "maven"
-      properties:
-      - installSource:
-          installers:
-          - maven:
-              id: "3.3.9"
 unclassified:
   simple-theme-plugin:
     elements:

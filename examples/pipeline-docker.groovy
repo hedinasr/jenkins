@@ -1,20 +1,22 @@
 pipeline {
-    agent none
+    agent {
+        docker { image 'maven:3-alpine' }
+    }
     stages {
-        stage('Back-end') {
-            agent {
-                docker { image 'maven:3-alpine' }
-            }
+        stage('Checkout') {
             steps {
-                sh 'mvn --version'
+                git url: 'https://github.com/jabedhasan21/java-hello-world-with-maven.git',
+                    branch: 'master'
             }
         }
-        stage('Front-end') {
-            agent {
-                docker { image 'node:7-alpine' }
-            }
+        stage('Test') {
             steps {
-                sh 'node --version'
+                sh 'mvn clean test'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'mvn clean install'
             }
         }
     }
