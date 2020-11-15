@@ -2,6 +2,7 @@ pipeline {
     agent {
         docker { image 'maven:3-alpine' }
     }
+
     stages {
         stage('Checkout') {
             steps {
@@ -18,6 +19,18 @@ pipeline {
             steps {
                 sh 'mvn clean install'
             }
+        }
+        stage('Package') {
+            steps {
+                sh 'mvn package'
+            }
+        }
+    }
+
+    post {
+        always {
+            archiveArtifacts 'target/*.jar'
+            deleteDir()
         }
     }
 }
