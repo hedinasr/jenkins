@@ -14,7 +14,7 @@ pipeline {
             steps {
                 configFileProvider(
                     [configFile(fileId: 'maven-settings', variable: 'MAVEN_SETTINGS')]) {
-                    sh 'mvn -X -s $MAVEN_SETTINGS clean test'
+                    sh 'mvn -X -s "$MAVEN_SETTINGS" clean test'
                 }
             }
         }

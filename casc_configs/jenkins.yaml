@@ -28,8 +28,3 @@ jenkins:
   views:
   - all:
       name: "all"
-unclassified:
-  simple-theme-plugin:
-    elements:
-    - cssUrl:
-        url: "https://cdn.rawgit.com/afonsof/jenkins-material-theme/gh-pages/dist/material-blue.css"

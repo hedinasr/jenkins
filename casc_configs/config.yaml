@@ -1,16 +1,21 @@
-globalConfigFiles:
-  configs:
-  - mavenSettings:
-      comment: "User settings"
-      id: "0c4faeee-6a6e-4ace-9688-b21cb171134d"
-      isReplaceAll: true
-      name: "maven-settings"
-      providerId: "org.jenkinsci.plugins.configfiles.maven.MavenSettingsConfig"
-      content: |-
-        <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
-                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
-          <pluginGroups>
-            <pluginGroup>com.amashchenko.maven.plugin</pluginGroup>
-          </pluginGroups>
-        </settings>
+unclassified:
+  simple-theme-plugin:
+    elements:
+    - cssUrl:
+        url: "https://cdn.rawgit.com/afonsof/jenkins-material-theme/gh-pages/dist/material-blue.css"
+  globalConfigFiles:
+    configs:
+    - mavenSettings:
+        comment: "User settings"
+        id: "maven-settings"
+        isReplaceAll: true
+        name: "maven-settings"
+        providerId: "org.jenkinsci.plugins.configfiles.maven.MavenSettingsConfig"
+        content: |-
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+            <pluginGroups>
+              <pluginGroup>com.amashchenko.maven.plugin</pluginGroup>
+            </pluginGroups>
+          </settings>
