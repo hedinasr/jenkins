@@ -12,7 +12,10 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'mvn clean test'
+                configFileProvider(
+                    [configFile(fileId: 'maven-settings', variable: 'MAVEN_SETTINGS')]) {
+                    sh 'mvn -X -s $MAVEN_SETTINGS clean test'
+                }
             }
         }
         stage('Build') {
